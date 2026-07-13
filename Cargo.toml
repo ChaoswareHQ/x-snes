@@ -1,0 +1,19 @@
+[package]
+name = "x-snes"
+authors = ["Nguyễn Quý Ngọc"]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97.0"
+repository = "https://github.com/ChaoswareHQ/x-nes"
+license = "MIT OR Apache-2.0"
+
+[lib]
+name = "snes"
+crate-type = ["lib", "cdylib", "staticlib"]
+
+[profile.release]
+opt-level      = 3
+lto            = true
+codegen-units  = 1
+strip          = "symbols"
+panic          = "abort"
